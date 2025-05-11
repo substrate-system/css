@@ -8,7 +8,9 @@
   ],
   "exports": {
     ".": "./dist/index.css",
-    "./min": "./dist/index.min.css"
+    "./min": "./dist/index.min.css",
+    "./css": "./dist/index.css",
+    "./css/min": "./dist/index.min.css"
   },
   "scripts": {
     "lint": "stylelint src/*.css",
