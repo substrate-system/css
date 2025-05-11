@@ -20,7 +20,7 @@
     "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-spec",
     "build-css": "postcss src/index.css --use postcss-nesting > dist/index.css",
     "build-css:min": "postcss src/index.css --use cssnano postcss-nesting > dist/index.min.css",
-    "build-example": "mkdir -p ./public && rm -rf ./public/* && VITE_DEBUG_MODE=staging vite --mode staging --base=\"/repo-name\" build",
+    "build-example": "mkdir -p ./public && rm -rf ./public/* && VITE_DEBUG_MODE=staging vite --mode staging --base=\"/css\" build",
     "build": "mkdir -p dist && rm -rf dist/* && npm run build-css && npm run build-css:min",
     "start": "vite",
     "toc": "markdown-toc --maxdepth 3 -i README.md",
