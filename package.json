@@ -1,6 +1,6 @@
 {
   "name": "@substrate-system/css",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "CSS variables",
   "type": "module",
   "main": "dist/index.js",
