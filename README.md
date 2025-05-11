@@ -53,7 +53,8 @@ Import from this package via CSS:
 
 ### Variables
 
-This package exposes CSS variables, used by web components in this namespace.
+This package exposes CSS variables, used by [substrate](https://github.com/substrate-system/)
+web components.
 
 ```css
 :root {
