@@ -7,33 +7,18 @@
     "./dist/*"
   ],
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./*": {
-      "import": [
-        "./dist/*.js",
-        "./dist/*"
-      ],
-      "require": [
-        "./dist/*.cjs",
-        "./dist/*"
-      ]
-    }
+    ".": "./dist/index.css",
+    "./min": "./dist/index.min.css"
   },
   "scripts": {
-    "lint": "eslint \"./**/*.{ts,js}\"",
+    "lint": "stylelint src/*.css",
     "build-tests": "esbuild test/index.ts --target=es2020 --bundle --keep-names > test/test-bundle.js",
     "test": "npm run lint && npm run build && npm run build-tests && npm run test-tape-run",
     "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-spec",
-    "build-cjs": "esbuild src/*.ts --format=cjs --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --out-extension:.js=.cjs --sourcemap",
-    "build-cjs:min": "esbuild src/*.ts --format=cjs --minify --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --out-extension:.js=.min.cjs --sourcemap",
-    "build-esm": "esbuild src/*.ts --format=esm --metafile=dist/meta.json --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --sourcemap && tsc --emitDeclarationOnly --project tsconfig.build.json --outDir dist",
-    "build-esm:min": "esbuild ./src/*.ts --format=esm --keep-names --bundle --tsconfig=tsconfig.build.json --minify --out-extension:.js=.min.js --outdir=./dist --sourcemap",
+    "build-css": "postcss src/index.css --use postcss-nesting > dist/index.css",
+    "build-css:min": "postcss src/index.css --use cssnano postcss-nesting > dist/index.min.css",
     "build-example": "mkdir -p ./public && rm -rf ./public/* && VITE_DEBUG_MODE=staging vite --mode staging --base=\"/repo-name\" build",
-    "build-docs": "typedoc ./src/index.ts",
-    "build": "mkdir -p ./dist && rm -rf ./dist/* && npm run build-cjs && npm run build-esm && npm run build-esm:min && npm run build-cjs:min",
+    "build": "mkdir -p dist && rm -rf dist/* && npm run build-css && npm run build-css:min",
     "start": "vite",
     "toc": "markdown-toc --maxdepth 3 -i README.md",
     "preversion": "npm run lint",
@@ -41,27 +26,32 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@substrate-system/debug": "^0.7.14",
-    "@substrate-system/tapzero": "^0.10.13",
-    "@preact/preset-vite": "^2.9.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
     "auto-changelog": "^2.4.0",
-    "esbuild": "^0.25.0",
-    "eslint": "^8.57.0",
-    "eslint-config-standard": "^17.1.0",
-    "htm": "^3.1.1",
+    "cssnano": "^7.0.7",
     "markdown-toc": "^1.2.0",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
     "postcss-nesting": "^13.0.0",
-    "preact": "^10.22.1",
+    "stylelint": "^16.19.1",
+    "stylelint-config-standard": "^38.0.0",
     "tap-spec": "^5.0.0",
-    "tape-run": "^11.0.0",
-    "typedoc": "^0.28.1",
-    "typescript": "^5.7.2",
     "vite": "^6.0.7"
   },
   "author": "nichoth <nichoth@nichoth.com> (https://nichoth.com)",
-  "license": "MIT"
+  "license": "SEE LICENSE IN LICENSE",
+  "name": "@substrate-system/css",
+  "description": "CSS variables",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/substrate-system/css.git"
+  },
+  "keywords": [
+    "css",
+    "variables"
+  ],
+  "bugs": {
+    "url": "https://github.com/substrate-system/css/issues"
+  },
+  "homepage": "https://github.com/substrate-system/css"
 }

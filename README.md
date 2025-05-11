@@ -1,36 +1,88 @@
-# template ts browser
+# CSS
+[![types](https://img.shields.io/npm/types/@substrate-system/icons?style=flat-square)](README.md)
+[![module](https://img.shields.io/badge/module-ESM%2FCJS-blue?style=flat-square)](README.md)
+[![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
+[![Common Changelog](https://nichoth.github.io/badge/common-changelog.svg)](./CHANGELOG.md)
+[![install size](https://flat.badgen.net/packagephobia/install/@substrate-system/css)](https://packagephobia.com/result?p=@substrate-system/css)
+[![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
+[![license](https://img.shields.io/badge/license-Polyform_Small_Business-249fbc?style=flat-square)](LICENSE)
 
-A template for typescript *dependency* modules that run in a browser environment.
-Uses `tape-run` for tests in a browser. See [template-ts](https://github.com/nichoth/template-ts) for the same thing but targeting Node.
+CSS variables
 
-## use
-1. Use the template button in github. Or clone this then
-`rm -rf .git && git init`. Then `npm i && npm init`.
+<details><summary><h2>Contents</h2></summary>
 
-2. Edit the source code in `src/index.ts`.
+<!-- toc -->
 
-3. Delete either `.github/workflows/gh-pages-docs.yml` or `.github/workflows/gh-pages.yml`, depending on whether you want to deploy an example or docs to github pages.
+- [Install](#install)
+- [Use](#use)
+  * [Bundler](#bundler)
+  * [CSS import](#css-import)
+  * [Variables](#variables)
 
-4. __Edit things__
-    * Use `./README.example.md` as a starter for docs:
-    ```sh
-    cp ./README.example.md ./README.md
-    ```
-    * edit the [build-example](https://github.com/nichoth/template-web-component/blob/c580636f1c912fe2633f7c2478f28b11729c9b80/package.json#L20) command in `package.json` so that it has the right
-    namespace for github pages
+<!-- tocstop -->
 
-## featuring
+</details>
 
-* compile the source to both ESM and CJS format, and put compiled files in `dist`.
-* ignore `dist` and `*.js` in git, but don't ignore them in npm. That way we
-  don't commit any compiled code to git, but it is available to consumers.
-* use npm's `prepublishOnly` hook to compile the code before publishing to npm.
-* use [exports](./package.json#L41) field in `package.json` to make sure the right format is used
-  by consumers.
-* `preversion` npm hook -- lint
-* `postversion` npm hook -- `git push --follow-tags && npm publish`
-* eslint -- `npm run lint`
-* tests run in a browser environment via `tape-run` -- see [`npm test`](./package.json#L12).
-  Includes `tap` testing tools -- [tapzero](https://github.com/bicycle-codes/tapzero)
-  and [tap-spec](https://www.npmjs.com/package/tap-spec)
-* CI via github actions
+
+## Install
+
+```sh
+npm i -S @substrate-system/package
+```
+
+## Use
+
+### Bundler
+In a bundler (`esbuild`), import from this package.
+
+```js
+import '@substrate-system/css'
+```
+
+Or minified:
+```js
+import '@substrate-system/css/min'
+```
+
+### CSS import
+Import from this package via CSS:
+
+```css
+@import url("node_modules/@substrate-system/css/dist/index.min.css");
+```
+
+### Variables
+
+This package exposes CSS variables, used by web components in this namespace.
+
+```css
+:root {
+    --substrate-background: #f4f7f9;
+    --substrate-accent: #38b9ff;
+    --substrate-primary: #36393d;
+    --substrate-secondary: #e8e8e4;
+    --substrate-light: #999da0;
+    --substrate-medium: #999da0;
+    --substrate-dark: #5a6571;
+    --substrate-shadow: #96969640;
+    --substrate-disabled: #98a1af;
+    --substrate-button-text: #36393d;
+    --substrate-button-shadow: #00000054;
+    --substrate-button-background: #f5f5f5;
+    --substrate-button-background-hover: #e6e6e6;
+    --substrate-button-background-focus: #ededed;
+    --substrate-input-text: #36393d;
+    --substrate-input-text-hover: #e4e4e4;
+    --substrate-input-border: #c9c9c9;
+    --substrate-input-border-hover: #36393d;
+    --substrate-input-background-focus: #eee;
+    --substrate-border: #e7edf1;
+    --substrate-error: #f06653;
+    --substrate-notification: #f06653;
+    --substrate-danger: #f06653;
+    --substrate-success: #85b274;
+    --substrate-warning: #f9a967;
+    --substrate-info: #999da0;
+    --substrate-overlay: #fff66;
+}
+```

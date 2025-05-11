@@ -1,0 +1,32 @@
+:root {
+    --substrate-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --substrate-background: #f4f7f9;
+    --substrate-window: #fff;
+    --substrate-accent: #38b9ff;
+    --substrate-primary: #36393d;
+    --substrate-secondary: #e8e8e4;
+    --substrate-light: #999da0;
+    --substrate-medium: #999da0;
+    --substrate-dark: #5a6571;
+    --substrate-shadow: #96969640;
+    --substrate-disabled: #98a1af;
+    --substrate-button-text: #36393d;
+    --substrate-button-shadow: #00000054;
+    --substrate-button-background: #f5f5f5;
+    --substrate-button-background-hover: #e6e6e6;
+    --substrate-button-background-focus: #ededed;
+    --substrate-button-background-disabled: #f7f7f5;
+    --substrate-input-text: #36393d;
+    --substrate-input-text-hover: #e4e4e4;
+    --substrate-input-border: #c9c9c9;
+    --substrate-input-border-hover: #36393d;
+    --substrate-input-background-focus: #eee;
+    --substrate-border: #e7edf1;
+    --substrate-error: #f06653;
+    --substrate-notification: #f06653;
+    --substrate-danger: #f06653;
+    --substrate-success: #85b274;
+    --substrate-warning: #f9a967;
+    --substrate-info: #999da0;
+    --substrate-overlay: #fff66;
+}
