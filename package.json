@@ -29,7 +29,6 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
   "devDependencies": {
     "auto-changelog": "^2.4.0",
     "cssnano": "^7.0.7",
