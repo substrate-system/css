@@ -100,13 +100,13 @@ import '@substrate-system/css'
 
 Reset/normalize styles for a nice blank slate.
 
-[See joshcomeau.com/css/custom-css-reset](https://www.joshwcomeau.com/css/custom-css-reset/)
+See [joshcomeau.com/css/custom-css-reset](https://www.joshwcomeau.com/css/custom-css-reset/)
 
 > These days, browsers don't have massive discrepancies when it comes to layout
 > or spacing. By and large, browsers implement the CSS specification faithfully,
 > and things behave as you'd expect.
 
-Featuring*:
+__*Featuring*__:
 
 1. `box-sizing: border-box;` -- Sizes [based on `border-box`, not `content-box`](https://www.joshwcomeau.com/css/custom-css-reset/#one-box-sizing-model-2).
 2. `margin: 0` -- [Remove default margin](https://www.joshwcomeau.com/css/custom-css-reset/#two-remove-default-margin-3). Add margins as needed in application CSS.
