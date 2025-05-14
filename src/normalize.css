@@ -1,0 +1,74 @@
+/*
+see https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+/* 1. Box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* 3. Enable keyword animations */
+    interpolate-size: allow-keywords;
+}
+
+* {
+    /* 2. Remove default margin */
+    margin: 0;
+
+    /*
+        3. Add accessible line-height 
+        see https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
+    */
+    line-height: calc(2px + 2ex + 2px);
+}
+
+body {
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* 8. Improve line wrapping */
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+
+/*
+  9. Create a root stacking context
+
+  __OPTIONAL__
+
+  see https://www.joshwcomeau.com/css/custom-css-reset/#nine-root-stacking-context-10
+  see https://www.joshwcomeau.com/css/stacking-contexts/
+*/
+#root {
+    isolation: isolate;
+}
+
+/* see https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/#accessibility-concerns */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

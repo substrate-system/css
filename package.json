@@ -10,16 +10,17 @@
   "exports": {
     ".": "./dist/index.css",
     "./min": "./dist/index.min.css",
+    "./min/*": "./dist/*.min.css",
     "./css": "./dist/index.css",
-    "./css/min": "./dist/index.min.css"
+    "./normalize": "./dist/normalize.css"
   },
   "scripts": {
     "lint": "stylelint src/*.css",
     "build-tests": "esbuild test/index.ts --target=es2020 --bundle --keep-names > test/test-bundle.js",
     "test": "npm run lint && npm run build && npm run build-tests && npm run test-tape-run",
     "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-spec",
-    "build-css": "postcss src/index.css --use postcss-nesting > dist/index.css",
-    "build-css:min": "postcss src/index.css --use cssnano postcss-nesting > dist/index.min.css",
+    "build-css": "postcss src/*.css --use postcss-nesting --dir dist",
+    "build-css:min": "postcss src/*.css --dir dist --ext .min.css --use cssnano postcss-nesting",
     "build-example": "mkdir -p ./public && rm -rf ./public/* && VITE_DEBUG_MODE=staging vite --mode staging --base=\"/css\" build",
     "build": "mkdir -p dist && rm -rf dist/* && npm run build-css && npm run build-css:min",
     "start": "vite",
@@ -29,7 +30,9 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
+  "dependencies": {},
   "devDependencies": {
+    "@substrate-system/debug": "^0.9.0",
     "auto-changelog": "^2.4.0",
     "cssnano": "^7.0.7",
     "markdown-toc": "^1.2.0",
@@ -49,7 +52,9 @@
   "license": "SEE LICENSE IN LICENSE",
   "keywords": [
     "css",
-    "variables"
+    "variables",
+    "normalize",
+    "reset"
   ],
   "bugs": {
     "url": "https://github.com/substrate-system/css/issues"

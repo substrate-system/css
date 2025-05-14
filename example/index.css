@@ -1,0 +1,14 @@
+pre {
+    background-color: #ececec;
+    padding: 1rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    border: 1px solid;
+}
+
+h2 {
+    max-width: 62rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}

@@ -1,11 +1,14 @@
-import { type FunctionComponent, render } from 'preact'
-import { html } from 'htm/preact'
-import { example } from '../src/index.js'
+import './index.css'
+import css from '../src/index.css?inline'
+import normalization from '../src/normalize.css?inline'
 
-example()
+const vars = document.getElementById('variables')
+vars?.insertAdjacentHTML('afterend', `
+<pre>
+${css}
+</pre>`)
 
-const Example:FunctionComponent<unknown> = function () {
-    return html`<div>hello</div>`
-}
-
-render(html`<${Example} />`, document.getElementById('root')!)
+document.getElementById('normalization')?.insertAdjacentHTML('afterend',
+`<pre>
+${normalization}
+</pre>`)
