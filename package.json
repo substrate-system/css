@@ -12,7 +12,8 @@
     "./min": "./dist/index.min.css",
     "./min/*": "./dist/*.min.css",
     "./css": "./dist/index.css",
-    "./normalize": "./dist/normalize.css"
+    "./normalize": "./dist/normalize.css",
+    "./stack": "./dist/stack.css"
   },
   "scripts": {
     "lint": "stylelint src/*.css",
@@ -30,7 +31,6 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
   "devDependencies": {
     "@substrate-system/debug": "^0.9.0",
     "auto-changelog": "^2.4.0",

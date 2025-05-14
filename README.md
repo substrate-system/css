@@ -5,7 +5,8 @@
 [![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
 [![license](https://img.shields.io/badge/license-Polyform_Small_Business-249fbc?style=flat-square)](LICENSE)
 
-CSS variables
+CSS [normalize](./src/normalize.css), [some variables](./src/index.css), and
+[the Stack](https://every-layout.dev/layouts/stack/).
 
 <details><summary><h2>Contents</h2></summary>
 
@@ -56,7 +57,6 @@ Import from this package via CSS:
 ```
 
 ### Variables
-
 This package exposes CSS variables, used by [substrate](https://github.com/substrate-system/)
 web components.
 
@@ -126,7 +126,22 @@ Featuring*:
 
 ### [The Stack](https://every-layout.dev/layouts/stack/)
 
-It's [Andy Bell's favorite 3 lines](https://piccalil.li/blog/my-favourite-3-lines-of-css/)
+```js
+import '@substrate-system/css/stack'
+
+// minified
+import '@substrate-system/css/min/stack'
+```
+
+It's [Andy Bell's favorite 3 lines](https://piccalil.li/blog/my-favourite-3-lines-of-css/).
+
+In its entirety:
+
+```css
+.stack > * + * {
+    margin-block-start: 1.5rem;
+}
+```
 
 -------------------
 
