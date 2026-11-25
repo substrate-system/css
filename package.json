@@ -1,17 +1,17 @@
 {
   "name": "@substrate-system/css",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "vite",
     "build-example": "vite build --base=./",
     "stylelint": "stylelint \"**/*.css\" --ignore-pattern \"public/**\"",
-    "build": "npm run clean && npm run build:main && npm run build:min",
+    "build": "rm -rf dist && mkdir -p dist && npm run build:main && npm run build:min",
     "build:main": "lightningcss src/*.css -d dist",
     "build:min": "for f in src/*.css; do n=${f#src/}; lightningcss -m \"$f\" -o \"dist/${n%.css}.min.css\" || exit; done",
     "preversion": "npm run stylelint",
-    "prepublishOnly": "npm run build",
-    "clean": "rm -rf dist && mkdir -p dist"
+    "postversion": "git push --follow-tags && npm publish",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist"
