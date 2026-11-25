@@ -5,10 +5,12 @@
     "start": "vite",
     "build-example": "vite build --base=./",
     "stylelint": "stylelint \"**/*.css\" --ignore-pattern \"public/**\"",
+    "toc": "markdown-toc --maxdepth 3 -i README.md",
     "build": "rm -rf dist && mkdir -p dist && npm run build:main && npm run build:min",
     "build:main": "lightningcss src/*.css -d dist",
     "build:min": "for f in src/*.css; do n=${f#src/}; lightningcss -m \"$f\" -o \"dist/${n%.css}.min.css\" || exit; done",
     "preversion": "npm run stylelint",
+    "version": "npm run toc && git add README.md",
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
@@ -19,6 +21,7 @@
     "browserslist": "^4.29.6",
     "lightningcss": "^1.33.0",
     "lightningcss-cli": "^1.33.0",
+    "markdown-toc": "^1.2.0",
     "stylelint": "^18.1.0",
     "stylelint-config-standard": "^41.1.0",
     "vite": "^8.3.8"
