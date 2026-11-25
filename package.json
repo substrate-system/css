@@ -1,6 +1,5 @@
 {
   "name": "@substrate-system/css",
-  "private": true,
   "version": "0.0.2",
   "scripts": {
     "start": "vite",
