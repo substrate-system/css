@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Example</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>CSS examples</h1>
+        </header>
+
+        <section aria-labelledby="grid-heading">
+            <h2 id="grid-heading">
+                <a href="https://github.com/nichoth/css/blob/main/src/responsive-grid.css">
+                    Responsive grid
+                </a>
+            </h2>
+            <p>
+                <code>responsive-grid.css</code> creates columns that fit
+                the available space. Resize the window to see them reflow.
+            </p>
+            <div class="smol-css-grid">
+                <div class="grid-item">One</div>
+                <div class="grid-item">Two</div>
+                <div class="grid-item">Three</div>
+                <div class="grid-item">Four</div>
+                <div class="grid-item">Five</div>
+                <div class="grid-item">Six</div>
+            </div>
+        </section>
+
+        <section aria-labelledby="icon-heading">
+            <h2 id="icon-heading">
+                <a href="https://github.com/nichoth/css/blob/main/src/center-icon.css">
+                    Centered icons
+                </a>
+            </h2>
+            <p>
+                <code>center-icon.css</code> aligns an icon with the first
+                line of its label, even when the text wraps, as
+                <a href="https://bsky.app/profile/haz.dev/post/3n33ozvhwes2b">
+                seen here</a>.
+            </p>
+            <div class="icon-examples">
+                <div class="center">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M12 2 2 12h3v9h6v-6h2v6h6v-9h3z" />
+                    </svg>
+                    <span>Home</span>
+                </div>
+                <div class="center">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M11 10h2v7h-2zm0-3h2v2h-2z" />
+                    </svg>
+                    <span>
+                        This longer label wraps onto another line so you can
+                        see how the icon stays aligned with the first line.
+                    </span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

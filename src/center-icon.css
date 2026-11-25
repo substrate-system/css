@@ -1,0 +1,20 @@
+.center {
+  --size: 1em;
+  --py: 0.5em;
+  --px: calc(var(--py) + (1lh - 1cap) / 2);
+
+  display: flex;
+  align-items: start;
+  gap: var(--px);
+  padding-block: var(--py);
+  padding-inline: var(--px);
+
+    /* The first child is the icon, the following content is the label. */
+  & > :first-child {
+    flex: none;
+    inline-size: var(--size);
+    block-size: var(--size);
+    margin-block: calc((1lh - var(--size)) / 2);
+    margin-inline: calc((1cap - var(--size)) / 2);
+  }
+}
