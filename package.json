@@ -3,12 +3,12 @@
   "version": "0.0.6",
   "scripts": {
     "start": "vite",
-    "build-example": "vite build --base=./",
     "stylelint": "stylelint \"**/*.css\" --ignore-pattern \"public/**\"",
     "toc": "markdown-toc --maxdepth 3 -i README.md",
     "build": "rm -rf dist && mkdir -p dist && npm run build:main && npm run build:min",
     "build:main": "lightningcss src/*.css -d dist",
     "build:min": "for f in src/*.css; do n=${f#src/}; lightningcss -m \"$f\" -o \"dist/${n%.css}.min.css\" || exit; done",
+    "build-example": "vite build --base=\"/css\"",
     "preversion": "npm run stylelint",
     "version": "npm run toc && git add README.md",
     "postversion": "git push --follow-tags && npm publish",
