@@ -1,5 +1,6 @@
 @import url('../src/center-icon.css');
 @import url('../src/responsive-grid.css');
+@import url('../src/stack.css');
 
 :root {
   --color-background: #f8f8f5;
@@ -48,4 +49,18 @@ p {
 .icon-examples {
   max-width: 25rem;
   padding: 0.5rem;
+}
+
+.stack-example {
+  max-width: 25rem;
+}
+
+.stack-nested {
+  --stack-space: 0.5rem;
+}
+
+.stack-item {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
 }

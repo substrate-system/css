@@ -1,0 +1,24 @@
+:root {
+  --stack-space: 1.5rem;
+  --stack-large: 3rem;
+  --stack-small: 0.5rem;
+}
+
+.stack > * {
+  /* no haging margin at beginning/end of stack */
+  margin-block: 0;
+}
+
+.stack > * + * {
+  /* adjacent children get margin */
+  margin-block-start: var(--stack-space, 1.5rem);
+}
+
+.stack-large > * + * {
+  /* see https://every-layout.dev/layouts/stack/#nested-variants */
+  margin-block-start: 3rem;
+}
+
+.stack-small > * + * {
+  margin-block-start: 0.5rem;
+}

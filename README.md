@@ -6,6 +6,7 @@ Things I want to remember about CSS.
 
 <!-- toc -->
 
+- [Stack](#stack)
 - [Responsive grid](#responsive-grid)
 - [Center aligned icons](#center-aligned-icons)
 - [Development](#development)
@@ -13,6 +14,34 @@ Things I want to remember about CSS.
 <!-- tocstop -->
 
 </details>
+
+## Stack
+
+[The stack](./src/stack.css) provides the `.stack` class, based on
+[every-layout.dev stack](https://every-layout.dev/layouts/stack/).
+It removes block margins from direct children and adds space between
+adjacent children, with no extra space at either end.
+
+```html
+<div class="stack">
+  <h2>Heading</h2>
+  <p>First paragraph.</p>
+  <p>Second paragraph.</p>
+</div>
+```
+
+Set `--stack-space` on the stack to change the spacing (default `1.5rem`).
+Nested stacks can set their own spacing; the property otherwise inherits
+from an ancestor. Children need to participate in block layout for block
+margins to create space.
+
+### Nested Stack
+
+See [nested variants](https://every-layout.dev/layouts/stack/#nested-variants).
+
+![screenshot of the nested stack](image.png)
+
+---
 
 ## Responsive grid
 
@@ -53,15 +82,24 @@ by default. The technique was shared
 
 ## Development
 
-Run `npm install` to install dependencies. Run `npm start` to serve the
-examples with Vite on port 8888, or `npm run build-example` to build them
-into `public/` for GitHub Pages. The example build uses Lightning CSS with
-a `>= 0.25%` Browserslist target.
+### Local Dev Server
 
-Run `npm run stylelint` to lint the stylesheets and `npm run build` to
-compile each stylesheet in `src/` to readable and minified CSS in `dist/`.
-The build replaces `dist/` and uses Lightning CSS's default browser
-behavior, without configured compatibility targets.
+Serve the example page locally at `:8888`.
 
-`npm version` runs Stylelint before changing the version, then pushes tags
-and publishes the package. `npm publish` runs the CSS build first.
+```sh
+npm start
+```
+
+### Lint
+
+```sh
+npm run stylelint
+```
+
+### Build
+
+Build the CSS to standard and minified versions in `dist/`.
+
+```sh
+npm run build
+```
