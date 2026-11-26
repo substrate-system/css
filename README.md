@@ -41,7 +41,31 @@ margins to create space.
 
 ### Nested Stack
 
-See [nested variants](https://every-layout.dev/layouts/stack/#nested-variants).
+Use `stack-large` and `stack-small` alongside `stack` to give nested
+groups different spacing:
+
+```html
+<div class="stack stack-large">
+  <section class="stack stack-small">
+    <h2>First section</h2>
+    <p>Items in this section are close together.</p>
+  </section>
+  <section class="stack stack-small">
+    <h2>Second section</h2>
+    <p>Sections are farther apart than their contents.</p>
+  </section>
+</div>
+```
+
+The outer stack spaces its sections by `3rem`; each nested stack spaces
+its own children by `0.5rem`. The variant classes use fixed values, so
+changing `--stack-space` does not change their spacing. Use `.stack`
+without a variant for configurable spacing. If a nested child sets
+`--stack-space`, that value also affects its own margin when its parent
+uses the configurable `.stack` rule.
+
+See also
+[nested variants](https://every-layout.dev/layouts/stack/#nested-variants).
 
 ![screenshot of the nested stack](image.png)
 
