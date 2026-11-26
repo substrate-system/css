@@ -23,13 +23,24 @@
                 <code>stack.css</code> spaces adjacent children. Nested
                 stacks can use a different spacing value.
             </p>
-            <div class="stack stack-example">
-                <div class="stack-item">First item</div>
-                <div class="stack stack-nested">
-                    <div class="stack-item">Nested item</div>
-                    <div class="stack-item">Nested item</div>
+            <div class="stack-example">
+                <p class="stack-label">Parent stack · 1.5rem spacing</p>
+                <div class="stack">
+                    <div class="stack-item">Child 1</div>
+                    <div class="stack-item">Child 2</div>
+                    <div class="stack-group">
+                        <p class="stack-label">
+                            Child 3 / nested parent · 0.5rem spacing
+                        </p>
+                        <div class="stack stack-nested">
+                            <div class="stack-item">Nested child 1</div>
+                            <div class="stack-item">Nested child 2</div>
+                            <div class="stack-item">Nested child 3</div>
+                        </div>
+                    </div>
+                    <div class="stack-item">Child 4</div>
+                    <div class="stack-item">Child 5</div>
                 </div>
-                <div class="stack-item">Last item</div>
             </div>
         </section>
 
@@ -50,6 +61,12 @@
                 <div class="grid-item">Four</div>
                 <div class="grid-item">Five</div>
                 <div class="grid-item">Six</div>
+                <div class="grid-item">Seven</div>
+                <div class="grid-item">Eight</div>
+                <div class="grid-item">Nine</div>
+                <div class="grid-item">Ten</div>
+                <div class="grid-item">Eleven</div>
+                <div class="grid-item">Twelve</div>
             </div>
         </section>
 
