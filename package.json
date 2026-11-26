@@ -1,6 +1,6 @@
 {
   "name": "@substrate-system/css",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "start": "vite",
     "stylelint": "stylelint \"**/*.css\" --ignore-pattern \"public/**\"",
