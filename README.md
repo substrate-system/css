@@ -7,9 +7,13 @@ Things I want to remember about CSS.
 <!-- toc -->
 
 - [Stack](#stack)
+  * [Nested Stack](#nested-stack)
 - [Responsive grid](#responsive-grid)
 - [Center aligned icons](#center-aligned-icons)
 - [Development](#development)
+  * [Local Dev Server](#local-dev-server)
+  * [Lint](#lint)
+  * [Build](#build)
 
 <!-- tocstop -->
 
